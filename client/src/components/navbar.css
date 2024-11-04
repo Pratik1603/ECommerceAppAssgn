@@ -1,0 +1,35 @@
+.menu-icon {
+  display: flex; /* Flexbox for the hamburger icon layout */
+  flex-direction: column; /* Stack the bars vertically */
+  cursor: pointer; /* Change cursor to pointer for clickable icon */
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  height: 4px; /* Height of each bar */
+  width: 30px; /* Width of each bar */
+  background-color: black; /* Color of the bars */
+  margin: 2px 0; /* Space between the bars */
+  transition: 0.3s; /* Smooth transition for animation */
+}
+
+/* Change the color of the bars when the menu is open */
+.change.bar1 {
+  transform: rotate(-45deg) translate(-5px, 6px); /* Transform for the first bar */
+}
+
+.change.bar2 {
+  opacity: 0; /* Hide the second bar */
+}
+
+.change.bar3 {
+  transform: rotate(45deg) translate(-5px, -6px); /* Transform for the third bar */
+}
+
+/* Media query to hide the icon on larger screens */
+@media (min-width: 768px) {
+  .menu-icon {
+    display: none; /* Hide menu icon on larger screens */
+  }
+}
