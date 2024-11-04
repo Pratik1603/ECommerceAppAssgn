@@ -24,9 +24,6 @@ mongoose.connect(process.env.MONGO_URL)
 })
 .catch((error) => console.log(`${error} did not connect`));
 
-app.get('/', (req, res) => {
-    res.send('Server is Running! 🚀');
-});
 
 app.use(bodyParser.json());
 app.use(cookieParser()); 
