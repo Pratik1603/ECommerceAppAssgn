@@ -28,7 +28,7 @@ const CartPage = () => {
             const totalAmount = cart.products.reduce((acc, product) => acc + (product?.productId?.price * product?.quantity), 0);
             setTotal(totalAmount);
         }
-    }, [cart]);
+    }, );
 
     const handleIncrease = (productId) => {
         if (currentUser) {
@@ -53,7 +53,7 @@ const CartPage = () => {
             });
         }
     };
-
+   
     return (
         <div className="bg-white min-h-screen">
             <Navbar />
@@ -66,7 +66,7 @@ const CartPage = () => {
                         <div>Error: {error}</div>
                     ) : (
                         <div>
-                            {cart && cart?.products?.map(product => (
+                            {cart && cart.products && cart?.products?.map(product => (
                                 <div key={product?.productId?._id} className="flex items-center justify-between border-b py-6">
                                     <div className="flex items-center space-x-4">
                                         <img src={product?.productId?.imageUrl} alt={product?.productId?.name} className="w-24 h-24 object-cover rounded-md" />
@@ -82,7 +82,7 @@ const CartPage = () => {
                                         </div>
                                     </div>
                                     <div className="flex items-center space-x-4">
-                                        <Button onClick={() => handleDecrease(product?.productId?._id)} className="text-gray-700"><RemoveIcon /></Button>
+                                        <Button onClick={() => {product?.quantity!=1 && handleDecrease(product?.productId?._id)}} className="text-gray-700"><RemoveIcon /></Button>
                                         <span className="text-lg font-medium">{product?.quantity}</span>
                                         <Button onClick={() => handleIncrease(product?.productId?._id)} className="text-gray-700"><AddIcon /></Button>
                                     </div>

@@ -7,7 +7,7 @@ import HomeCarousel from '../../components/homeCarousel';
 const Shop = () => {
     
   return (
-    <div className='bg-gray-100 border-2 border-black'>
+    <div className='bg-gray-100'>
         <Navbar/>
     
     <section className="bg-cover  bg-center h-[400px] flex justify-center items-center text-white" style={{ backgroundImage: "url('/path-to-image.jpg')" }}>
