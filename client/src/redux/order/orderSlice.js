@@ -1,6 +1,6 @@
 // redux/orderSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { createOrderAPI } from './orderAPI';
+import { createOrderAPI } from './orderAPI.js';
 import axios from 'axios';
 export const createOrder = createAsyncThunk(
     'order/createOrder',
